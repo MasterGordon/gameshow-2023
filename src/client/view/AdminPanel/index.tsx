@@ -26,7 +26,7 @@ export const AdminPanel = () => {
       <CountInput
         value={gameState.round}
         onChange={(value) => {
-          mutation.mutate({ round: value });
+          mutation.mutate({ ...gameState, round: value });
         }}
       />
     </HStack>
