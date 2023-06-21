@@ -1,0 +1,67 @@
+{
+  "name": "@examples/next-websockets-starter",
+  "version": "10.31.0",
+  "private": true,
+  "engines": {
+    "node": "^18.15.0"
+  },
+  "scripts": {
+    "build:1-next": "cross-env NODE_ENV=production next build",
+    "build:2-server": "tsc --project tsconfig.server.json",
+    "build": "run-s build:*",
+    "dev:wss": "cross-env PORT=3001 tsx watch src/server/wssDevServer.ts --tsconfig tsconfig.server.json ",
+    "dev:next": "next dev",
+    "dev": "run-p dev:*",
+    "start": "cross-env NODE_ENV=production node dist/server/prodServer.js",
+    "lint": "eslint --cache --ext \".js,.ts,.tsx\" --report-unused-disable-directives --report-unused-disable-directives src",
+    "lint-fix": "pnpm lint --fix"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.7.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@tanstack/react-query": "^4.18.0",
+    "@trpc/client": "^10.31.0",
+    "@trpc/next": "^10.31.0",
+    "@trpc/react-query": "^10.31.0",
+    "@trpc/server": "^10.31.0",
+    "@types/fs-extra": "^11.0.1",
+    "clsx": "^1.1.1",
+    "framer-motion": "^10.12.16",
+    "fs-extra": "^11.1.1",
+    "next": "^13.4.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "superjson": "^1.7.4",
+    "tsx": "^3.12.7",
+    "ws": "^8.0.0",
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-query-devtools": "^4.18.0",
+    "@types/node": "^18.16.16",
+    "@types/react": "^18.2.8",
+    "@types/ws": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.40.0",
+    "eslint-config-next": "^13.4.3",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "start-server-and-test": "^1.12.0",
+    "typescript": "^5.1.3"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
