@@ -41,6 +41,9 @@ dependencies:
   fs-extra:
     specifier: ^11.1.1
     version: 11.1.1
+  jotai:
+    specifier: ^2.2.1
+    version: 2.2.1(react@18.2.0)
   next:
     specifier: ^13.4.3
     version: 13.4.6(react-dom@18.2.0)(react@18.2.0)
@@ -53,6 +56,9 @@ dependencies:
   superjson:
     specifier: ^1.7.4
     version: 1.12.3
+  ts-deepmerge:
+    specifier: ^6.1.0
+    version: 6.1.0
   tsx:
     specifier: ^3.12.7
     version: 3.12.7
@@ -64,6 +70,9 @@ dependencies:
     version: 3.21.4
 
 devDependencies:
+  '@swc-jotai/react-refresh':
+    specifier: ^0.0.8
+    version: 0.0.8
   '@tanstack/react-query-devtools':
     specifier: ^4.18.0
     version: 4.29.15(@tanstack/react-query@4.29.15)(react-dom@18.2.0)(react@18.2.0)
@@ -1812,6 +1821,10 @@ packages:
 
   /@sideway/pinpoint@2.0.0:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
+    dev: true
+
+  /@swc-jotai/react-refresh@0.0.8:
+    resolution: {integrity: sha512-fHMenTg1jeETEShCh/wlDxRpR6DZAXIuDuFIB9fZ4yf+JfrWzQkPIvPN3E0efSpOham9ucRspS0uI82PxBbCjg==}
     dev: true
 
   /@swc/helpers@0.5.1:
@@ -3619,6 +3632,18 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: true
 
+  /jotai@2.2.1(react@18.2.0):
+    resolution: {integrity: sha512-Gz4tpbRQy9OiFgBwF9F7TieDn0UTE3C0IFSDuxHjOIvgn2tACH30UKz6p/wIlfoZROXSTCIxEvYEa7Y25WM+8g==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -4666,6 +4691,11 @@ packages:
 
   /toggle-selection@1.0.6:
     resolution: {integrity: sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ==}
+    dev: false
+
+  /ts-deepmerge@6.1.0:
+    resolution: {integrity: sha512-YVJBhdIwYAZv6QoYz/mihpgbv+r0+QfQazTcSS6WXhQkbCxjTRoV+IOLtyArtz3au7xb+fPQVp1d7o5Qw1f1fg==}
+    engines: {node: '>=14.13.1'}
     dev: false
 
   /tsconfig-paths@3.14.2:

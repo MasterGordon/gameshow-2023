@@ -4,6 +4,10 @@ import { GameState } from 'types/GameState';
 const initialState: GameState = {
   round: 0,
   players: [],
+  category: 0,
+  lockAnswers: false,
+  showCorrectAnswer: false,
+  screen: 'question',
 };
 
 export const getGameState = (): GameState => {

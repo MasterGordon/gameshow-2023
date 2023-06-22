@@ -1,12 +1,8 @@
-import { Button } from '@chakra-ui/react';
+import { Player } from 'client/view/Player';
 import { NextPage } from 'next';
 
 const IndexPage: NextPage = () => {
-  return (
-    <>
-      <Button>Test</Button>
-    </>
-  );
+  return <Player />;
 };
 
 export default IndexPage;

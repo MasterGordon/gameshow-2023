@@ -1,6 +1,6 @@
 # Gameshow 2023
 
-## Getting Startet
+## Getting Started
 
 ```bash
 npm i -g pnpm@latest

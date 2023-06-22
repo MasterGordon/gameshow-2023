@@ -3,6 +3,7 @@ import { Button, HStack, Input, useNumberInput } from '@chakra-ui/react';
 interface Props {
   value: number;
   onChange: (value: number) => void;
+  max?: number;
 }
 
 const CountInput: React.FC<Props> = (props) => {
@@ -11,6 +12,7 @@ const CountInput: React.FC<Props> = (props) => {
       step: 1,
       value: props.value,
       min: 0,
+      max: props.max,
       onChange: (valueString) => {
         const value = parseFloat(valueString);
         if (isNaN(value)) {
