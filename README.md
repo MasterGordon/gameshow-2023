@@ -8,3 +8,4 @@ pnpm i
 pnpm dev
 ```
 
+Open http://localhost:4000
