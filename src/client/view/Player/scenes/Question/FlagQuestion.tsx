@@ -13,11 +13,12 @@ const FlagQuestionComponent: React.FC<{
 
   return (
     <VStack padding="32px" flexDir="column" gap="32px">
+      <Heading size="md">Zu welchem Land gehört diese Flagge?</Heading>
       <Image
         src={question.image}
         height="auto"
         width="600px"
-        border="1px solid grey"
+        border="3px solid #333"
       />
       {isCanvas && gameState?.showCorrectAnswer ? (
         <Heading size="md" color="orange.600">

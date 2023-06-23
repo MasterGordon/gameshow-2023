@@ -3,6 +3,7 @@ import { usePlayerName } from './playerAtom';
 import { Join } from './scenes/Join';
 import { questions } from 'questions';
 import Question from './scenes/Question';
+import { Center, Heading } from '@chakra-ui/react';
 
 export const Player: React.FC = () => {
   const [playerName] = usePlayerName();
@@ -12,5 +13,15 @@ export const Player: React.FC = () => {
 
   const currentQuestion = questions[gameState.category][gameState.round];
 
-  return playerName ? <Question question={currentQuestion} /> : <Join />;
+  return playerName ? (
+    gameState.screen === 'question' ? (
+      <Question question={currentQuestion} />
+    ) : (
+      <Center minWidth="100vw" minHeight="100vh">
+        <Heading>Hier gibt es noch nichts zu sehen.</Heading>
+      </Center>
+    )
+  ) : (
+    <Join />
+  );
 };

@@ -1,4 +1,4 @@
-import { Button, VStack } from '@chakra-ui/react';
+import { Button, Heading, VStack } from '@chakra-ui/react';
 import { LawQuestion } from 'types/Question';
 import { usePlayer } from '../../playerAtom';
 import { useGameState } from 'client/hooks/useGameState';
@@ -15,6 +15,7 @@ const LawQuestionComponent: React.FC<{
 
   return (
     <VStack padding="32px" flexDir="column" gap="32px">
+      <Heading size="md">Welches Gesetz gibt es wirklich?</Heading>
       {question.laws.map((law, index) => (
         <Button
           key={law}

@@ -9,15 +9,6 @@ const Canvas: React.FC = () => {
   const { gameState } = useGameState();
 
   if (!gameState) return null;
-  const players = [
-    { score: 0, name: 'Der große Saurier' },
-    { score: 0, name: 'Zwei Hühner' },
-    { score: 0, name: 'Bongo der Herrscher' },
-    { score: 0, name: 'Bongo der D' },
-    { score: 0, name: 'Zwei Keks' },
-    { score: 0, name: 'Drei Keks' },
-    { score: 0, name: 'Quadro keks' },
-  ];
   const currentQuestion = questions[gameState.category][gameState.round];
   return (
     <>
@@ -38,7 +29,7 @@ const Canvas: React.FC = () => {
               templateColumns="repeat(auto-fit,minmax(300px,1fr));"
               gap="32px"
             >
-              {players.map((player) => (
+              {gameState.players.map((player) => (
                 <Flex
                   justifySelf="center"
                   width="300px"
@@ -47,12 +38,18 @@ const Canvas: React.FC = () => {
                   alignItems="center"
                   paddingX="8px"
                 >
-                  <Heading size="sm" whiteSpace="normal" textAlign="center">
+                  <Heading
+                    size="sm"
+                    color="orange.600"
+                    whiteSpace="normal"
+                    textAlign="center"
+                  >
                     {player.name}
                   </Heading>
-                  <Heading color="orange.600" size="sm">
-                    {player.score}
-                  </Heading>
+                  <Heading size="sm">{player.score} Punkte</Heading>
+                  {player.showAnswer && (
+                    <Heading size="sm">{player.answer}</Heading>
+                  )}
                 </Flex>
               ))}
             </Grid>

@@ -1,6 +1,11 @@
 import { z } from 'zod';
 
-export const screen = z.union([z.literal('welcome'), z.literal('question')]);
+export const screen = z.union([
+  z.literal('welcome'),
+  z.literal('question'),
+  z.literal('overview'),
+  z.literal('question-preview'),
+]);
 
 export type ScreenType = z.infer<typeof screen>;
 
