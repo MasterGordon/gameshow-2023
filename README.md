@@ -9,3 +9,9 @@ pnpm dev
 ```
 
 Open http://localhost:4000
+
+## Urls
+
+- http://localhost:4000
+- http://localhost:4000/canvas
+- http://localhost:4000/admin
