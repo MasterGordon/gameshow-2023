@@ -1,4 +1,4 @@
-import Canvas from 'client/view/Canvas';
+import Canvas from '../client/view/Canvas';
 
 const CanvasPage = () => {
   return <Canvas />;

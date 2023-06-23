@@ -1,4 +1,4 @@
-import { AdminPanel } from 'client/view/AdminPanel';
+import { AdminPanel } from '../client/view/AdminPanel';
 
 const AdminPage = () => {
   return <AdminPanel />;

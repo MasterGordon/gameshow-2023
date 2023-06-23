@@ -38,6 +38,8 @@
     "next": "^13.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-qr-code": "^2.0.11",
+    "react-raining-confetti": "^1.0.1",
     "superjson": "^1.7.4",
     "ts-deepmerge": "^6.1.0",
     "tsx": "^3.12.7",

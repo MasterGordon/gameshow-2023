@@ -64,6 +64,7 @@ export const AdminPanel = () => {
               category: value,
               round: 0,
               showCorrectAnswer: false,
+              screen: 'question-preview',
             });
           }}
           max={questions.length - 1}
@@ -98,6 +99,17 @@ export const AdminPanel = () => {
         />
       </FormControl>
       <FormControl>
+        <Text fontWeight="bold">Confetti</Text>
+        <Switch
+          isChecked={gameState.confetti}
+          onChange={() => {
+            updateGameState({
+              confetti: !gameState.confetti,
+            });
+          }}
+        />
+      </FormControl>
+      <FormControl>
         <Text fontWeight="bold">Lock Answers</Text>
         <Switch
           isChecked={gameState.lockAnswers}
@@ -108,8 +120,30 @@ export const AdminPanel = () => {
           }}
         />
       </FormControl>
-      <Button onClick={clearAll}>Clear All Answers</Button>
-      <HStack>
+      <HStack flexWrap="wrap">
+        <Button onClick={clearAll}>Clear All Answers</Button>
+        <Button
+          onClick={() => {
+            const players = gameState.players.map((p) => {
+              return { ...p, showAnswer: true };
+            });
+            updateGameState({ players });
+          }}
+        >
+          Show All Player Answers
+        </Button>
+        <Button
+          onClick={() => {
+            const players = gameState.players.map((p) => {
+              return { ...p, showAnswer: false };
+            });
+            updateGameState({ players });
+          }}
+        >
+          Hide All Player Answers
+        </Button>
+      </HStack>
+      <HStack flexWrap="wrap">
         {gameState.players.map((player) => (
           <Card key={player.name}>
             <CardHeader>{player.name}</CardHeader>

@@ -1,5 +1,6 @@
 import { useGameState } from 'client/hooks/useGameState';
 import { atom, useAtom } from 'jotai';
+import { trpc } from 'utils/trpc';
 
 export const playerNameAtom = atom('');
 export const usePlayerName = () => {
@@ -8,18 +9,14 @@ export const usePlayerName = () => {
 
 export const usePlayer = () => {
   const { gameState, updateGameState } = useGameState();
+  const sendAnswerMutation = trpc.game.sendAnswer.useMutation();
   const [playerName] = usePlayerName();
   const player = gameState?.players.find((p) => p.name === playerName);
   const sendAnswer = (answer: string) => {
-    if (!player) return;
-    player.answer = answer;
-    const players = gameState?.players.map((p) => {
-      if (p.name === playerName) {
-        return player;
-      }
-      return p;
+    sendAnswerMutation.mutate({
+      answer,
+      playerName,
     });
-    updateGameState({ players });
   };
   return { player, sendAnswer };
 };

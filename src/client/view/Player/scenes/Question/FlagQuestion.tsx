@@ -17,7 +17,7 @@ const FlagQuestionComponent: React.FC<{
       <Image
         src={question.image}
         height="auto"
-        width="600px"
+        width="500px"
         border="3px solid #333"
       />
       {isCanvas && gameState?.showCorrectAnswer ? (

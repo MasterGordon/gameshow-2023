@@ -5,7 +5,7 @@ import { createTRPCNext } from '@trpc/next';
 import type { inferProcedureOutput } from '@trpc/server';
 import { NextPageContext } from 'next';
 import getConfig from 'next/config';
-import type { AppRouter } from 'server/routers/_app';
+import type { AppRouter } from '../server/routers/_app';
 import superjson from 'superjson';
 
 // ℹ️ Type-only import:
@@ -32,7 +32,9 @@ function getEndingLink(ctx: NextPageContext | undefined) {
     });
   }
   const client = createWSClient({
-    url: WS_URL,
+    url: `ws://${window.location.hostname}:${
+      process.env.NODE_ENV === 'development' ? '4001' : window.location.port
+    }`,
   });
   return wsLink<AppRouter>({
     client,
@@ -74,10 +76,6 @@ export const trpc = createTRPCNext<AppRouter>({
       queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
     };
   },
-  /**
-   * @link https://trpc.io/docs/ssr
-   */
-  ssr: true,
 });
 
 // export const transformer = superjson;

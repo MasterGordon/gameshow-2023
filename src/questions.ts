@@ -5,15 +5,9 @@ import {
   MultipleChoiceQuestion,
   Question,
   LawQuestion,
-} from 'types/Question';
+} from './types/Question';
 
 export const multipleChoiceQuestion: MultipleChoiceQuestion[] = [
-  {
-    type: 'multiple-choice',
-    question: 'Ist eine Frage mit ganz viel Test gut?',
-    choices: ['Test1', 'Test2', 'Test3', 'Test4'],
-    rightAnswer: 'A',
-  },
   {
     type: 'multiple-choice',
     question: 'Woraus wurde früher violetter Farbstoff gewonnen?',

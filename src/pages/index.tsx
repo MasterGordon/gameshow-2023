@@ -1,4 +1,5 @@
-import { Player } from 'client/view/Player';
+import { useEffect } from 'react';
+import { Player } from '../client/view/Player';
 import { NextPage } from 'next';
 
 const IndexPage: NextPage = () => {
