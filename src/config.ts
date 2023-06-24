@@ -3,6 +3,6 @@ export const config = {
   password: 'ogthomas420',
   encryption: 'WPA',
   hiddenSSID: false,
-  ip: '192.168.178.75',
+  ip: '192.168.137.159',
   port: 4000,
 };

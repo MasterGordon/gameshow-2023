@@ -1,4 +1,12 @@
-import { Center, Grid, HStack, Heading, Img } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  Center,
+  Grid,
+  HStack,
+  Heading,
+  Img,
+} from '@chakra-ui/react';
 import { useGameState } from 'client/hooks/useGameState';
 import { config } from 'config';
 import QRCode from 'react-qr-code';
@@ -12,6 +20,12 @@ const GettingReady: React.FC = () => {
       w="100vw"
       templateColumns="1fr 1fr 1fr"
       templateRows="1fr 1fr 5fr 1fr"
+      sx={{
+        svg: {
+          width: '500px',
+          height: '500px',
+        },
+      }}
     >
       <Heading gridColumnStart="1" gridColumnEnd="4">
         Vorbereitung
@@ -23,23 +37,30 @@ const GettingReady: React.FC = () => {
         <Img src="/team-finden.jpeg" boxSize="500px" />
       </Center>
       <Center>
-        <QRCode
-          value={generateWiFiQRString({
-            ssid: config.ssid,
-            password: config.password,
-            encryption: 'WPA',
-            hiddenSSID: config.hiddenSSID,
-          })}
-          width={500}
-          height={500}
-        />
+        <Box>
+          <QRCode
+            value={generateWiFiQRString({
+              ssid: config.ssid,
+              password: config.password,
+              encryption: 'WPA',
+              hiddenSSID: config.hiddenSSID,
+            })}
+            width={500}
+            height={500}
+          />
+          <Text>Thomas</Text>
+          <Text>ogthomas420</Text>
+        </Box>
       </Center>
       <Center>
-        <QRCode
-          value={'http://' + config.ip + ':' + config.port}
-          width="500px"
-          height="500px"
-        />
+        <Box>
+          <QRCode
+            value={'http://' + config.ip + ':' + config.port}
+            width="500px"
+            height="500px"
+          />
+          <Text>http://{config.ip}:4000</Text>
+        </Box>
       </Center>
       <HStack
         gridColumnStart="1"
